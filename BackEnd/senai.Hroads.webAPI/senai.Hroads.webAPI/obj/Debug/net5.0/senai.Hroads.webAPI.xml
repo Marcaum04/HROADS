@@ -4,6 +4,14 @@
         <name>senai.Hroads.webAPI</name>
     </assembly>
     <members>
+        <member name="M:senai.Hroads.webAPI.Controllers.LoginController.Login(senai.Hroads.webAPI.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            dominio/api/Login
+        </member>
         <member name="P:senai.Hroads.webAPI.Controllers.TiposUsuarioController._TipoUsuarioRepository">
             <summary>
              Objeto que irá receber todos os métodos definidos na interface
@@ -36,6 +44,50 @@
             <param name="id">variável que recebe o id do Tipo de Usuário a ser deletado</param>
             <returns>Status code 204 - NO CONTENT</returns>
         </member>
+        <member name="P:senai.Hroads.webAPI.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Objeto que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia o objeto para que haja referência às implementações feitas no repositório
+            </summary>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.Listar">
+            <summary>
+            Lista todos os Usuário existentes
+            </summary>
+            <returns>Uma lista de usuários com o status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca um usuário pelo seu id
+            </summary>
+            <param name="idUsuario">id do usuário a ser buscado</param>
+            <returns>Um usuário encontrado com o status code 200 - Ok</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.Cadastrar(senai.Hroads.webAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um Usuário
+            </summary>
+            <param name="novoUsuario">Usuario a ser cadastrado</param>
+            <returns>Um status code 201 - Created</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.Atualizar(senai.Hroads.webAPI.Domains.Usuario)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="usuarioAtualizado">Objeto com as novas informações do Usuário e o id do usuário a ser atualizado</param>
+            <returns>Um status code 204 - No content</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.UsuariosController.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário
+            </summary>
+            <param name="idUsuario">id do Usuário a ser deletado</param>
+            <returns>Um status code 204 - No content</returns>
+        </member>
         <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Cadastrar(senai.Hroads.webAPI.Domains.Tipousuario)">
             <summary>
             Cadastra um novo Tipo de Usuário
@@ -59,6 +111,50 @@
             Deleta um tipo de usuário
             </summary>
             <param name="idTipoUsuario">Variável que recebe id do usuário a ser deletado</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.Login(System.String,System.String)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="email">recebe o e-mail do usuario</param>
+            <param name="senha">recebe a senha do usuario</param>
+            <returns>O usuário encontrado</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Busca por um usuário pelo seu ID
+            </summary>
+            <param name="idUsuario">ID do usuário a ser buscado</param>
+            <returns>Usuário encontrado</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.Cadastrar(senai.Hroads.webAPI.Domains.Usuario)">
+            <summary>
+            Cadastra um usuário
+            </summary>
+            <param name="novoUsuario">Recebe os dados de um usuário cadastrado</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.Listar">
+            <summary>
+            Lista todos os usuários
+            </summary>
+            <returns> Uma lista de usuários</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.Atualizar(senai.Hroads.webAPI.Domains.Usuario)">
+            <summary>
+            Atualiza os dados de um usuário
+            </summary>
+            <param name="usuarioAtualizado">Recebe os novos dados do usuário</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um usuário
+            </summary>
+            <param name="idUsuario"> ID do usuário a ser deletado</param>
+        </member>
+        <member name="T:senai.Hroads.webAPI.ViewModels.LoginViewModel">
+            <summary>
+            Classe responsável pelo modelo de login
+            </summary>
         </member>
     </members>
 </doc>
