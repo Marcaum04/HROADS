@@ -4,5 +4,61 @@
         <name>senai.Hroads.webAPI</name>
     </assembly>
     <members>
+        <member name="P:senai.Hroads.webAPI.Controllers.TiposUsuarioController._TipoUsuarioRepository">
+            <summary>
+             Objeto que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.TiposUsuarioController.Listar">
+            <summary>
+            Lista todos os Tipos de usuários existentes
+            </summary>
+            <returns>Uma lista de objetos Tipo Usuário e um status code 200 - OK</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.TiposUsuarioController.Cadastrar(senai.Hroads.webAPI.Domains.Tipousuario)">
+            <summary>
+            Cadastra um novo Tipo de Usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto que recebe o objeto a ser cadastrado</param>
+            <returns>Um status code 201 - CREATED</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.TiposUsuarioController.Atualizar(senai.Hroads.webAPI.Domains.Tipousuario)">
+            <summary>
+            Atualiza um tipo de usuário existente
+            </summary>
+            <param name="tipoUsuarioAtualizado">Objeto que recebe o id do tipo de usuário a ser atualizado e seus novos dados</param>
+            <returns>Um status code 204 - NO CONTENT</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.TiposUsuarioController.Deletar(System.Int32)">
+            <summary>
+            Deleta um Tipo de Usuário
+            </summary>
+            <param name="id">variável que recebe o id do Tipo de Usuário a ser deletado</param>
+            <returns>Status code 204 - NO CONTENT</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Cadastrar(senai.Hroads.webAPI.Domains.Tipousuario)">
+            <summary>
+            Cadastra um novo Tipo de Usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto que recebe os dados do usuário a ser cadastrado</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Listar">
+            <summary>
+            Lista todos os tipos de usuários
+            </summary>
+            <returns>Uma lista de objetos tipo usuários</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Atualizar(senai.Hroads.webAPI.Domains.Tipousuario)">
+            <summary>
+            Atualiza os dados de um tipo de usuário
+            </summary>
+            <param name="tipoUsuarioAtualizado">Objeto que recebe id do objeto a ser atualizado e suas novas informações</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário
+            </summary>
+            <param name="idTipoUsuario">Variável que recebe id do usuário a ser deletado</param>
+        </member>
     </members>
 </doc>
