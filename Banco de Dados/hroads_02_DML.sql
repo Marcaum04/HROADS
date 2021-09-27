@@ -30,12 +30,17 @@ VALUES  (1,1),(2,1),
 		(3,6)
 GO
 
+INSERT INTO TIPOUSUARIO (tituloUsuario)
+VALUES ('Administrador'), ('Jogador')
 
+INSERT INTO USUARIO (idTipoUsuario, nomeUsuario, email, senha)
+VALUES (1, 'ROGER ADM', 'ROGERINHOADM@ADM.COM', 'ADM123'),
+		(2, 'WILLIAMONGE', 'WILLIAMPOGGERS@JOGADOR.COM', 'WWWWW')
 
-INSERT INTO PERSONAGEM (idClasse, nomeP, vidaMaxima, manaMaxima, dataAtuailizacao, dataCriacao)
-VALUES  (1,'DeuBug',100,80,'2019-01-18','2019-01-18'),
-		(4,'BitBug',70,100,'2016-03-17','2016-03-17'),
-		(7,'Fer8',75,60,'2018-03-18','2018-03-18')
+INSERT INTO PERSONAGEM (idClasse, nomeP,idUsuario, vidaMaxima, manaMaxima, dataAtuailizacao, dataCriacao)
+VALUES  (1,'DeuBug',NULL,100,80,'2019-01-18','2019-01-18'),
+		(4,'BitBug',2,70,100,'2016-03-17','2016-03-17'),
+		(7,'Fer8',NULL,75,60,'2018-03-18','2018-03-18')
 GO
 
 
