@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fic\\Desktop\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj": {}
+    "C:\\Users\\fic\\Desktop\\a\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fic\\Desktop\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj": {
+    "C:\\Users\\fic\\Desktop\\a\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fic\\Desktop\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj",
+        "projectUniqueName": "C:\\Users\\fic\\Desktop\\a\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj",
         "projectName": "senai.Hroads.webAPI",
-        "projectPath": "C:\\Users\\fic\\Desktop\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj",
+        "projectPath": "C:\\Users\\fic\\Desktop\\a\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\senai.Hroads.webAPI.csproj",
         "packagesPath": "C:\\Users\\fic\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fic\\Desktop\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\obj\\",
+        "outputPath": "C:\\Users\\fic\\Desktop\\a\\HROADS\\BackEnd\\senai.Hroads.webAPI\\senai.Hroads.webAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\fic\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -89,7 +89,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

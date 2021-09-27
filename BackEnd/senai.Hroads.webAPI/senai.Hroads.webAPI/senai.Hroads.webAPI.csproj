@@ -18,9 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Interfaces\" />
     <Folder Include="Controllers\" />
-    <Folder Include="Repositories\" />
   </ItemGroup>
 
 	<PropertyGroup>
