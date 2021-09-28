@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using senai.Hroads.webAPI.Domains;
 using senai.Hroads.webAPI.Interfaces;
 using senai.Hroads.webAPI.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.Hroads.webAPI.Controllers
 {
@@ -32,6 +28,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// Lista todos os Usuário existentes
         /// </summary>
         /// <returns>Uma lista de usuários com o status code 200 - Ok</returns>
+        [Authorize]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -43,6 +40,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="idUsuario">id do usuário a ser buscado</param>
         /// <returns>Um usuário encontrado com o status code 200 - Ok</returns>
+        [Authorize]
         [HttpGet("{idUsuario}")]
         public IActionResult BuscarPorId(int idUsuario)
         {
@@ -54,6 +52,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="novoUsuario">Usuario a ser cadastrado</param>
         /// <returns>Um status code 201 - Created</returns>
+        [Authorize(Roles = "1")]
         [HttpPost]
         public IActionResult Cadastrar(Usuario novoUsuario)
         {
@@ -67,6 +66,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="usuarioAtualizado">Objeto com as novas informações do Usuário e o id do usuário a ser atualizado</param>
         /// <returns>Um status code 204 - No content</returns>
+        [Authorize(Roles = "1")]
         [HttpPut]
         public IActionResult Atualizar(Usuario usuarioAtualizado)
         {
@@ -80,6 +80,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="idUsuario">id do Usuário a ser deletado</param>
         /// <returns>Um status code 204 - No content</returns>
+        [Authorize(Roles = "1")]
         [HttpDelete("{idUsuario}")]
         public IActionResult Deletar(int idUsuario)
         {

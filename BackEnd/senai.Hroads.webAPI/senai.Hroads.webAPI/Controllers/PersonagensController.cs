@@ -1,12 +1,8 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using senai.Hroads.webAPI.Domains;
 using senai.Hroads.webAPI.Interfaces;
 using senai.Hroads.webAPI.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.Hroads.webAPI.Controllers
 {
@@ -29,6 +25,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// Lista todos os Tipos de personagens existentes
         /// </summary>
         /// <returns>Uma lista de objetos personagem e um status code 200 - OK</returns>
+        [Authorize]
         [HttpGet]
         public IActionResult Listar()
         {
@@ -40,6 +37,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="novoPersonagem">Objeto que recebe os dados do personagem a ser cadastrado</param>
         /// <returns>Um status code 201 - CREATED</returns>
+        [Authorize(Roles = "2")]
         [HttpPost]
         public IActionResult Cadastrar(Personagem novoPersonagem)
         {
@@ -53,6 +51,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="PersonagemAtualizado">Objeto que recebe o id do tipo de personagem a ser atualizado e seus novos dados</param>
         /// <returns>Um status code 204 - NO CONTENT</returns>
+        [Authorize(Roles = "2")]
         [HttpPut]
         public IActionResult Atualizar(Personagem PersonagemAtualizado)
         {
@@ -66,6 +65,7 @@ namespace senai.Hroads.webAPI.Controllers
         /// </summary>
         /// <param name="id">variável que recebe o id do personagem a ser deletado</param>
         /// <returns>Status code 204 - NO CONTENT</returns>
+        [Authorize(Roles = "2")]
         [HttpDelete("{id}")]
         public IActionResult Deletar(int id)
         {
