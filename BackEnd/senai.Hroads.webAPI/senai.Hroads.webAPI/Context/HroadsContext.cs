@@ -19,10 +19,10 @@ namespace senai.Hroads.webAPI.Context
         }
 
         public virtual DbSet<Classe> Classes { get; set; }
-        public virtual DbSet<Classehabilidade> Classehabilidades { get; set; }
+        public virtual DbSet<ClasseHabilidade> ClasseHabilidades { get; set; }
         public virtual DbSet<Habilidade> Habilidades { get; set; }
         public virtual DbSet<Personagem> Personagems { get; set; }
-        public virtual DbSet<Tipohabilidade> Tipohabilidades { get; set; }
+        public virtual DbSet<TipoHabilidade> TipoHabilidades { get; set; }
         public virtual DbSet<Tipousuario> Tipousuarios { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
 
@@ -30,7 +30,6 @@ namespace senai.Hroads.webAPI.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
                 optionsBuilder.UseSqlServer("Data Source=NOTE0113C5\\SQLEXPRESS; Initial Catalog=SENAI_HROADS_MANHA; user id=sa; pwd=Senai@132;");
             }
         }
@@ -60,7 +59,7 @@ namespace senai.Hroads.webAPI.Context
                     .HasColumnName("nomeC");
             });
 
-            modelBuilder.Entity<Classehabilidade>(entity =>
+            modelBuilder.Entity<ClasseHabilidade>(entity =>
             {
                 entity.HasKey(e => e.IdClasseHabilidade)
                     .HasName("PK__CLASSEHA__5FC96972777B738C");
@@ -76,7 +75,7 @@ namespace senai.Hroads.webAPI.Context
                 entity.Property(e => e.IdHabilidade).HasColumnName("idHabilidade");
 
                 entity.HasOne(d => d.IdClasseNavigation)
-                    .WithMany(p => p.Classehabilidades)
+                    .WithMany(p => p.ClasseHabilidades)
                     .HasForeignKey(d => d.IdClasse)
                     .HasConstraintName("FK__CLASSEHAB__idCla__3A81B327");
 
@@ -160,7 +159,7 @@ namespace senai.Hroads.webAPI.Context
                     .HasConstraintName("FK__PERSONAGE__idUsu__32E0915F");
             });
 
-            modelBuilder.Entity<Tipohabilidade>(entity =>
+            modelBuilder.Entity<TipoHabilidade>(entity =>
             {
                 entity.HasKey(e => e.IdTipoHabilidade)
                     .HasName("PK__TIPOHABI__B197B832322FEDA2");
