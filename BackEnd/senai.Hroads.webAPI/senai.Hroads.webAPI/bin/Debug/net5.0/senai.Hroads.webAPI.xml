@@ -12,6 +12,38 @@
             <returns>Retorna um token com as informações do usuário</returns>
             dominio/api/Login
         </member>
+        <member name="P:senai.Hroads.webAPI.Controllers.PersonagensController._PersonagemRepository">
+            <summary>
+             Objeto que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.PersonagensController.Listar">
+            <summary>
+            Lista todos os Tipos de personagens existentes
+            </summary>
+            <returns>Uma lista de objetos personagem e um status code 200 - OK</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.PersonagensController.Cadastrar(senai.Hroads.webAPI.Domains.Personagem)">
+            <summary>
+            Cadastra um novo personagem
+            </summary>
+            <param name="novoPersonagem">Objeto que recebe os dados do personagem a ser cadastrado</param>
+            <returns>Um status code 201 - CREATED</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.PersonagensController.Atualizar(senai.Hroads.webAPI.Domains.Personagem)">
+            <summary>
+            Atualiza um tipo de personagem existente
+            </summary>
+            <param name="PersonagemAtualizado">Objeto que recebe o id do tipo de personagem a ser atualizado e seus novos dados</param>
+            <returns>Um status code 204 - NO CONTENT</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Controllers.PersonagensController.Deletar(System.Int32)">
+            <summary>
+            Deleta um personagem
+            </summary>
+            <param name="id">variável que recebe o id do personagem a ser deletado</param>
+            <returns>Status code 204 - NO CONTENT</returns>
+        </member>
         <member name="P:senai.Hroads.webAPI.Controllers.TiposUsuarioController._TipoUsuarioRepository">
             <summary>
              Objeto que irá receber todos os métodos definidos na interface
@@ -87,6 +119,30 @@
             </summary>
             <param name="idUsuario">id do Usuário a ser deletado</param>
             <returns>Um status code 204 - No content</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IPersonagemRepository.Cadastrar(senai.Hroads.webAPI.Domains.Personagem)">
+            <summary>
+            Cadastra um novo Personagem
+            </summary>
+            <param name="novoPersonagem">Objeto que recebe os dados do personagem a ser cadastrado</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IPersonagemRepository.Listar">
+            <summary>
+            Lista todos os personagens
+            </summary>
+            <returns>Uma lista de objetos personagens</returns>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IPersonagemRepository.Atualizar(senai.Hroads.webAPI.Domains.Personagem)">
+            <summary>
+            Atualiza os dados de um personagem
+            </summary>
+            <param name="PersonagemAtualizado">Objeto que recebe id do objeto a ser atualizado e suas novas informações</param>
+        </member>
+        <member name="M:senai.Hroads.webAPI.Interfaces.IPersonagemRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta um personagem
+            </summary>
+            <param name="idPersonagem">Variável que recebe id do usuário a ser deletado</param>
         </member>
         <member name="M:senai.Hroads.webAPI.Interfaces.ITipoUsuarioRepository.Cadastrar(senai.Hroads.webAPI.Domains.Tipousuario)">
             <summary>

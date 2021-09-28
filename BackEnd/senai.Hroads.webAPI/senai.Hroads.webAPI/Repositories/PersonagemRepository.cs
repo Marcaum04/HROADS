@@ -1,13 +1,12 @@
 ﻿using senai.Hroads.webAPI.Context;
 using senai.Hroads.webAPI.Domains;
-using System;
+using senai.Hroads.webAPI.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace senai.Hroads.webAPI.Repositories
 {
-    public class PersonagemRepository
+    public class PersonagemRepository : IPersonagemRepository
     {
         HroadsContext ctx = new HroadsContext();
         public void Atualizar(Personagem PersonagemAtualizado)

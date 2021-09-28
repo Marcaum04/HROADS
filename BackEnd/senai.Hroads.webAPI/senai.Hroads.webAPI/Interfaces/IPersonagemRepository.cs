@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace senai.Hroads.webAPI.Interfaces
 {
-    interface IPersonagem
+    interface IPersonagemRepository
     {
             /// <summary>
         /// Cadastra um novo Personagem
