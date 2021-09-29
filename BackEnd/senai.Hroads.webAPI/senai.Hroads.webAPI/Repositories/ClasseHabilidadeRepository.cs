@@ -1,4 +1,5 @@
-﻿using senai.Hroads.webAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.Hroads.webAPI.Context;
 using senai.Hroads.webAPI.Domains;
 using senai.Hroads.webAPI.Interfaces;
 using System;
@@ -34,7 +35,7 @@ namespace senai.Hroads.webAPI.Repositories
 
         public ClasseHabilidade BuscarPorId(int idClasseHabilidade)
         {
-            return ctx.ClasseHabilidades.FirstOrDefault(u => u.IdClasseHabilidade == idClasseHabilidade);
+            return ctx.ClasseHabilidades.Include(C => C.IdClasseNavigation).Include(H => H.IdHabilidadeNavigation).FirstOrDefault(u => u.IdClasseHabilidade == idClasseHabilidade);
         }
 
         public void Cadastrar(ClasseHabilidade novaClasseHabilidade)
@@ -55,7 +56,7 @@ namespace senai.Hroads.webAPI.Repositories
 
         public List<ClasseHabilidade> Listar()
         {
-            return ctx.ClasseHabilidades.ToList();
+            return ctx.ClasseHabilidades.Include(C => C.IdClasseNavigation).Include(H => H.IdHabilidadeNavigation).ToList();
         }
     }
 }
