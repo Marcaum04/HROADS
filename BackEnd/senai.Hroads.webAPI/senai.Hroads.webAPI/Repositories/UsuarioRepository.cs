@@ -1,4 +1,5 @@
-﻿using senai.Hroads.webAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.Hroads.webAPI.Context;
 using senai.Hroads.webAPI.Domains;
 using senai.Hroads.webAPI.Interfaces;
 using System;
@@ -38,7 +39,7 @@ namespace senai.Hroads.webAPI.Repositories
 
         public Usuario BuscarPorId(int idUsuario)
         {
-            return ctx.Usuarios.FirstOrDefault(u => u.IdUsuario == idUsuario);
+            return ctx.Usuarios.Include(Tu => Tu.IdTipoUsuarioNavigation).FirstOrDefault(u => u.IdUsuario == idUsuario);
         }
 
         public void Cadastrar(Usuario novoUsuario)
@@ -59,7 +60,7 @@ namespace senai.Hroads.webAPI.Repositories
 
         public List<Usuario> Listar()
         {
-            return ctx.Usuarios.ToList();
+            return ctx.Usuarios.Include(Tu => Tu.IdTipoUsuarioNavigation).ToList();
         }
 
         public Usuario Login(string email, string senha)

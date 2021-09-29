@@ -1,4 +1,5 @@
-﻿using senai.Hroads.webAPI.Context;
+﻿using Microsoft.EntityFrameworkCore;
+using senai.Hroads.webAPI.Context;
 using senai.Hroads.webAPI.Domains;
 using senai.Hroads.webAPI.Interfaces;
 using System;
